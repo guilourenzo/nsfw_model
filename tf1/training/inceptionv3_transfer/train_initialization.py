@@ -7,6 +7,7 @@ from keras.applications import InceptionV3
 from keras.models import Sequential, Model, load_model
 from keras.layers import Dense, Dropout, Flatten, AveragePooling2D
 from keras import initializers, regularizers
+from datetime import datetime
 
 # reusable stuff
 import constants
@@ -15,7 +16,7 @@ import generators
 
 # No kruft plz
 clear_session()
-
+print('INICIO DO PROCESSO: ', datetime.now())
 # Config
 height = constants.SIZES['basic']
 width = height
@@ -31,7 +32,7 @@ conv_base = InceptionV3(
 conv_base.trainable = False
 
 # Let's see it
-print('Summary')
+print('Summary: ', datetime.now())
 print(conv_base.summary())
 
 # Let's construct that top layer replacement
@@ -46,7 +47,7 @@ x = Dense(128,activation='relu', kernel_initializer=initializers.he_normal(seed=
 x = Dropout(0.25)(x)
 predictions = Dense(constants.NUM_CLASSES,  kernel_initializer="glorot_uniform", activation='softmax')(x)
 
-print('Stacking New Layers')
+print('Stacking New Layers ', datetime.now())
 model = Model(inputs = conv_base.input, outputs=predictions)
 
 # Load checkpoint if one is found
@@ -57,7 +58,7 @@ if os.path.exists(weights_file):
 # Get all model callbacks
 callbacks_list = callbacks.make_callbacks(weights_file)
 
-print('Compile model')
+print('Compile model ', datetime.now())
 # originally adam, but research says SGD with scheduler
 # opt = Adam(lr=0.001, amsgrad=True)
 opt = SGD(momentum=.9)
@@ -70,7 +71,7 @@ model.compile(
 # Get training/validation data via generators
 train_generator, validation_generator = generators.create_generators(height, width)
 
-print('Start training!')
+print('Start training! ', datetime.now())
 history = model.fit_generator(
     train_generator,
     callbacks=callbacks_list,
@@ -84,5 +85,6 @@ history = model.fit_generator(
 )
 
 # Save it for later
-print('Saving Model')
+print('Saving Model ', datetime.now())
 model.save("nsfw." + str(width) + "x" + str(height) + ".h5")
+

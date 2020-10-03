@@ -21,6 +21,7 @@ validation_datagen = ImageDataGenerator(
 
 train_dir = os.path.join(constants.BASE_DIR, 'train')
 test_dir = os.path.join(constants.BASE_DIR, 'test')
+validation_dir = os.path.join(constants.BASE_DIR, 'validate')
 
 def create_generators(height, width):
     train_generator = train_datagen.flow_from_directory(
@@ -31,7 +32,7 @@ def create_generators(height, width):
     )
 
     validation_generator = validation_datagen.flow_from_directory(
-        test_dir,
+        validation_dir,
         target_size=(height, width),
         class_mode='categorical',
         batch_size=constants.GENERATOR_BATCH_SIZE
