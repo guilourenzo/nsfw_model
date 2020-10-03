@@ -87,4 +87,3 @@ history = model.fit_generator(
 # Save it for later
 print('Saving Model ', datetime.now())
 model.save("nsfw." + str(width) + "x" + str(height) + ".h5")
-
