@@ -1,5 +1,6 @@
 *.hdf5
 *.h5
+*.tflite
 logs/
 .vscode/
 __pycache__
