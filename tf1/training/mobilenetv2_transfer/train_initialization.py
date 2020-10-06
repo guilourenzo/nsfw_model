@@ -7,11 +7,16 @@ from keras.applications.mobilenet_v2 import MobileNetV2
 from keras.models import Sequential, Model, load_model
 from keras.layers import Dense, Dropout, Flatten, AveragePooling2D
 from keras import initializers, regularizers
+import logging
+from datetime import datetime
 
+logging.basicConfig(filename='train_initialization.log', filemode='w', format='%(asctime)s - %(levelname)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+logging.info('SCRIPT INICIADO')
 # reusable stuff
 import constants
 import callbacks
 import generators
+
 
 # No kruft plz
 clear_session()
@@ -21,6 +26,7 @@ config = tf.ConfigProto()
 config.gpu_options.allow_growth = True  # dynamically grow the memory used on the GPU
 sess = tf.Session(config=config)
 set_session(sess)  # set this TensorFlow session as the default session for Keras
+
 
 # Config
 height = constants.SIZES['basic']

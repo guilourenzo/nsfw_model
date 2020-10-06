@@ -26,7 +26,7 @@ def make_callbacks(weights_file):
     # checkpoint
     filepath = weights_file
     checkpoint = ModelCheckpoint(
-        filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+        filepath, monitor='val_accuracy', verbose=1, save_best_only=True, mode='max')
 
     # Update info
     tensorboard = TensorBoard(log_dir="logs/{}".format(time()))
