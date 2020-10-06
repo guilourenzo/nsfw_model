@@ -1,0 +1,41 @@
+06-Oct-20 00:10:16 - INFO - SCRIPT INICIADO
+06-Oct-20 00:10:21 - INFO - BIBLIOTECAS IMPORTADAS
+06-Oct-20 00:10:21 - INFO - CONFIGURAÇÕES IMPORTADAS
+06-Oct-20 00:10:21 - INFO - SESSÃO REINICIALIZADA COM SUCESSO
+06-Oct-20 00:10:22 - INFO - AJUSTES DE USO DE GPU FINALIZADO COM SUCESSO
+06-Oct-20 00:10:22 - INFO - PESOS DO MODELO IMPORTADOS COM SUCESSO
+06-Oct-20 00:10:26 - INFO - MODELO MobileNetV2 IMPORTADO COM SUCESSO
+06-Oct-20 00:10:26 - INFO - AJUSTE DE TREINAMENTO DO MODELO REALIZADO COM SUCESSO
+06-Oct-20 00:10:26 - INFO - SUMARIO DO MODELO
+06-Oct-20 00:10:26 - INFO - None
+06-Oct-20 00:10:26 - INFO - NOVAS CAMADAS CONFIGURADAS COM SUCESSO
+06-Oct-20 00:10:26 - INFO - NOVAS CAMADAS ADICIONADAS AO MODELO COM SUCESSO
+06-Oct-20 00:10:26 - INFO - VERIFICAÇÃO DE CHECKPOINT
+06-Oct-20 00:10:26 - INFO - INICIALIZACAO DO CALLBACK REALIZADO
+06-Oct-20 00:10:26 - INFO - MODELO COMPILADO COM SUCESSO
+06-Oct-20 00:10:31 - INFO - BASES DE TREINAMENTO E TESTES IMPORTADAS COM SUCESSO
+06-Oct-20 00:10:31 - INFO - TREINAMENTO DO MODELO INICIADO
+06-Oct-20 00:10:31 - WARNING - From <ipython-input-15-477163f68ae7>:5: Model.fit_generator (from tensorflow.python.keras.engine.training) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use Model.fit, which supports generators.
+06-Oct-20 00:10:39 - WARNING - From C:\ProgramData\Anaconda3\lib\site-packages\tensorflow\python\ops\summary_ops_v2.py:1277: stop (from tensorflow.python.eager.profiler) is deprecated and will be removed after 2020-07-01.
+Instructions for updating:
+use `tf.profiler.experimental.stop` instead.
+06-Oct-20 00:10:39 - WARNING - Callbacks method `on_train_batch_end` is slow compared to the batch time (batch time: 0.1068s vs `on_train_batch_end` time: 0.2186s). Check your callbacks.
+06-Oct-20 02:28:10 - INFO - TREINAMENTO DO MODELO FINALIZADO
+06-Oct-20 02:28:11 - INFO - MODELO EXPORTADO COM SUCESSO
+06-Oct-20 02:28:16 - INFO - AVALIACAO DO MODELO REALIZADO COM SUCESSO
+06-Oct-20 02:28:16 - INFO - FINAL LOSS: 0.41
+06-Oct-20 02:28:16 - INFO - FINAL ACCURACY: 88.81%
+06-Oct-20 02:28:27 - WARNING - From C:\ProgramData\Anaconda3\lib\site-packages\tensorflow\python\training\tracking\tracking.py:111: Model.state_updates (from tensorflow.python.keras.engine.training) is deprecated and will be removed in a future version.
+Instructions for updating:
+This property should not be used in TensorFlow 2.0, as updates are applied automatically.
+06-Oct-20 02:28:27 - WARNING - From C:\ProgramData\Anaconda3\lib\site-packages\tensorflow\python\training\tracking\tracking.py:111: Layer.updates (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+This property should not be used in TensorFlow 2.0, as updates are applied automatically.
+06-Oct-20 02:28:45 - INFO - Assets written to: nude_mobilenetv2_train\assets
+06-Oct-20 02:28:51 - INFO - MODELO SALVO NA PASTA nude_mobilenetv2_train
+06-Oct-20 02:29:25 - INFO - LABELS: [(0, 'not_safe'), (1, 'safest')]
+06-Oct-20 02:29:28 - INFO - SORTED INDICES: (0, 1)
+06-Oct-20 02:29:28 - INFO - SORTED LABELS: ('not_safe', 'safest')
+06-Oct-20 02:29:31 - INFO - ARQUIVO DE LABELS SALVO COM SUCESSO
