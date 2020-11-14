@@ -13,3 +13,7 @@ images/**
 NSFWModel/**
 trained_models/**
 training/train_best_models.cmd
+*Zone.Identifier
+*.pb
+MODELOS/variables/*
+
